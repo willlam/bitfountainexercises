@@ -13,7 +13,37 @@ func printNumberSupplied(number : Int) {
   numberTimesTwo *= 2
 }
 
+printNumberSupplied(5)
+
+
 // above is an example of passing a parameter to make a function more dynamic. Here you'll see that we're making "number" the parameter and assigning to an integer type, which will be passed onto the function
 
 
 // as for multiple parameters, you can add a second (or more when you use a comma as seen below
+
+
+func turnOffAppliance (applianceName: String, isOn: Bool) {
+  if isOn == true  {
+    println("Please turn off the \(applianceName)")
+  } else {
+    println("I turned the \(applianceName) off already.")
+  }
+}
+
+turnOffAppliance ("Microwave", true)
+
+// to show how a return value for a function works
+
+func additionFunction (firstArgument: Int, secondArgument: Int) -> Int {
+  
+  let sumOfArguments = firstArgument + secondArgument
+  
+  return sumOfArguments
+}
+
+
+var additionAnswerofInteger = additionFunction(4, 4)
+
+let finalAnswer = additionFunction(additionAnswerofInteger, 5)
+
+println(finalAnswer)
