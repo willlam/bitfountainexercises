@@ -1,5 +1,5 @@
 func printHelloWorld () {
-  println("Hello world")
+  println("Hello world!")
   println("Hello Class")
 }
 
@@ -47,3 +47,13 @@ var additionAnswerofInteger = additionFunction(4, 4)
 let finalAnswer = additionFunction(additionAnswerofInteger, 5)
 
 println(finalAnswer)
+
+
+func helloWorldString () -> String {
+  printHelloWorld() // we're calling a function within a function.. note the console output!.. we have the Hello World and Hello Class from the previous function above and also the output helloWorldSTring combined with the variable hellWorld along with the exclamation marks!
+  return "Hello World"
+}
+
+var helloWorld = helloWorldString() //this sets a variable helloWorld to be equal to the function helloWorldString that returns "Hello World" - so meta o_0
+helloWorld = helloWorld + "!!"
+println(helloWorld) // here we're printing a line that calls the helloWorld variable that we set above that adds the string of two exclamation marks.
