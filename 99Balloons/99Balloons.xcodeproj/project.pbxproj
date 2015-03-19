@@ -15,6 +15,11 @@
 		39B495F41AAFD1C3001D8A70 /* _9BalloonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B495F31AAFD1C3001D8A70 /* _9BalloonsTests.swift */; };
 		39B495FE1AAFD264001D8A70 /* Balloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B495FD1AAFD264001D8A70 /* Balloon.swift */; };
 		39B496001AAFD3BD001D8A70 /* milo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39B495FF1AAFD3BD001D8A70 /* milo.jpg */; };
+		39B496071ABA7818001D8A70 /* BerlinTVTower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39B496021ABA7818001D8A70 /* BerlinTVTower.jpg */; };
+		39B496081ABA7818001D8A70 /* RedBalloon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39B496031ABA7818001D8A70 /* RedBalloon1.jpg */; };
+		39B496091ABA7818001D8A70 /* RedBalloon2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39B496041ABA7818001D8A70 /* RedBalloon2.jpg */; };
+		39B4960A1ABA7818001D8A70 /* RedBalloon3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39B496051ABA7818001D8A70 /* RedBalloon3.jpg */; };
+		39B4960B1ABA7818001D8A70 /* RedBalloon4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39B496061ABA7818001D8A70 /* RedBalloon4.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		39B495F31AAFD1C3001D8A70 /* _9BalloonsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _9BalloonsTests.swift; sourceTree = "<group>"; };
 		39B495FD1AAFD264001D8A70 /* Balloon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balloon.swift; sourceTree = "<group>"; };
 		39B495FF1AAFD3BD001D8A70 /* milo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = milo.jpg; sourceTree = "<group>"; };
+		39B496021ABA7818001D8A70 /* BerlinTVTower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BerlinTVTower.jpg; sourceTree = "<group>"; };
+		39B496031ABA7818001D8A70 /* RedBalloon1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RedBalloon1.jpg; sourceTree = "<group>"; };
+		39B496041ABA7818001D8A70 /* RedBalloon2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RedBalloon2.jpg; sourceTree = "<group>"; };
+		39B496051ABA7818001D8A70 /* RedBalloon3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RedBalloon3.jpg; sourceTree = "<group>"; };
+		39B496061ABA7818001D8A70 /* RedBalloon4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RedBalloon4.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,7 @@
 		39B495DB1AAFD1C3001D8A70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				39B496011ABA7818001D8A70 /* 99RedBalloonsAssets */,
 				39B495FF1AAFD3BD001D8A70 /* milo.jpg */,
 				39B495DC1AAFD1C3001D8A70 /* Info.plist */,
 			);
@@ -116,6 +127,18 @@
 				39B495F21AAFD1C3001D8A70 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39B496011ABA7818001D8A70 /* 99RedBalloonsAssets */ = {
+			isa = PBXGroup;
+			children = (
+				39B496021ABA7818001D8A70 /* BerlinTVTower.jpg */,
+				39B496031ABA7818001D8A70 /* RedBalloon1.jpg */,
+				39B496041ABA7818001D8A70 /* RedBalloon2.jpg */,
+				39B496051ABA7818001D8A70 /* RedBalloon3.jpg */,
+				39B496061ABA7818001D8A70 /* RedBalloon4.jpg */,
+			);
+			path = 99RedBalloonsAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,9 +221,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B496071ABA7818001D8A70 /* BerlinTVTower.jpg in Resources */,
 				39B496001AAFD3BD001D8A70 /* milo.jpg in Resources */,
 				39B495E31AAFD1C3001D8A70 /* Main.storyboard in Resources */,
+				39B4960A1ABA7818001D8A70 /* RedBalloon3.jpg in Resources */,
+				39B496081ABA7818001D8A70 /* RedBalloon1.jpg in Resources */,
 				39B495E81AAFD1C3001D8A70 /* LaunchScreen.xib in Resources */,
+				39B4960B1ABA7818001D8A70 /* RedBalloon4.jpg in Resources */,
+				39B496091ABA7818001D8A70 /* RedBalloon2.jpg in Resources */,
 				39B495E51AAFD1C3001D8A70 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +445,7 @@
 				39B495F91AAFD1C3001D8A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39B495FA1AAFD1C3001D8A70 /* Build configuration list for PBXNativeTarget "99BalloonsTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +454,7 @@
 				39B495FC1AAFD1C3001D8A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
