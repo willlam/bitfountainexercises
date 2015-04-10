@@ -29,11 +29,21 @@ class ViewController: UIViewController {
   var betTitleLabel: UILabel!
   var winnerPaidTitleLabel: UILabel!
   
+  // buttons in the fourth container
+  
+  var resetButton: UIButton!
+  var betOneButton: UIButton!
+  var betMaxButton: UIButton!
+  var spinButton: UIButton!
+  
+  
   let kMarginForView: CGFloat = 10.0
   let kMarginForSlot: CGFloat = 2.0
   
   let kSixth: CGFloat = 1.0/6.0
   let kThird: CGFloat = 1.0/3.0
+  let kHalf: CGFloat = 1.0/2.0
+  let kEighth: CGFloat = 1.0/8.0
 
 
   let kNumberOfContainers = 3
@@ -47,11 +57,26 @@ class ViewController: UIViewController {
     // need to let setup the container views first before working with individual containers and drawing into them.
     setupFirstContainer(self.firstContainer)
     setupSecondContainer(self.secondContainer)
+    setupThirdContainer(self.thirdContainer)
+    setupFourthContainer(self.fourthContainer)
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+    
+  
+  }
+  
+  // IBAction - for UIButton in fourth container below
+  
+  
+  func resetButtonPressed (button: UIButton) {
+    println("resetButtonPressed")
+  }
+  
+  func betOneButtonPressed (button: UIButton) {
+    println(button)
   }
 
   //helper function to abstract away some logic from ViewDidLoad
@@ -133,6 +158,55 @@ class ViewController: UIViewController {
     self.winnerPaidLabel.backgroundColor = UIColor.darkGrayColor()
     containerView.addSubview(self.winnerPaidLabel)
     
+    self.creditsTitleLabel = UILabel()
+    self.creditsTitleLabel.text = "Credits"
+    self.creditsTitleLabel.textColor = UIColor.blackColor()
+    self.creditsTitleLabel.font = UIFont(name: "AmericanTypewriter", size: 14)
+    self.creditsTitleLabel.sizeToFit()
+    self.creditsTitleLabel.center = CGPoint(x: containerView.frame.width * kSixth, y: containerView.frame.height * kThird * 2)
+    containerView.addSubview(self.creditsTitleLabel)
+    
+    self.betTitleLabel = UILabel()
+    self.betTitleLabel.text = "Bet"
+    self.betTitleLabel.textColor = UIColor.blackColor()
+    self.betTitleLabel.font = UIFont(name: "AmericanTypewriter", size: 14)
+    self.betTitleLabel.sizeToFit()
+    self.betTitleLabel.center = CGPoint(x: containerView.frame.width * kSixth * 3, y: containerView.frame.height * kThird * 2)
+    containerView.addSubview(self.betTitleLabel)
+    
+    self.winnerPaidTitleLabel = UILabel()
+    self.winnerPaidTitleLabel.text = "Winner Paid"
+    self.winnerPaidTitleLabel.textColor = UIColor.blackColor()
+    self.winnerPaidTitleLabel.font = UIFont(name: "AmericanTypewriter", size: 14)
+    self.winnerPaidTitleLabel.sizeToFit()
+    self.winnerPaidTitleLabel.center = CGPoint(x: containerView.frame.width * 5 * kSixth, y: containerView.frame.height * 2 * kThird)
+    containerView.addSubview(self.winnerPaidTitleLabel)
+    
+  }
+  
+  func setupFourthContainer (containerView: UIView) {
+    self.resetButton = UIButton()
+    self.resetButton.setTitle("Reset", forState: UIControlState.Normal)
+    self.resetButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+    self.resetButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
+    // ? is saying does this attribute necessarily exist at this point? memory issue
+    self.resetButton.backgroundColor = UIColor.lightGrayColor()
+    self.resetButton.sizeToFit()
+    self.resetButton.center = CGPoint(x: containerView.frame.width * kEighth, y: containerView.frame.height * kHalf)
+    self.resetButton.addTarget(self, action: "resetButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+    containerView.addSubview(self.resetButton)
+    
+    // by adding a colon (:) in the addTarget, which is for the argument or parameter that we pass in, you're allowing to add one or more parameters
+    
+    self.betOneButton = UIButton()
+    self.betOneButton.setTitle("Reset", forState: UIControlState.Normal)
+    self.betOneButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+    self.betOneButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
+    self.betOneButton.backgroundColor = UIColor.greenColor()
+    self.betOneButton.sizeToFit()
+    self.betOneButton.center = CGPoint(x: containerView.frame.width * 3 * kEighth, y: containerView.frame.height * kHalf)
+    self.betOneButton.addTarget(self, action: "betOneButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+    containerView.addSubview(self.betOneButton)
     
     
   }
