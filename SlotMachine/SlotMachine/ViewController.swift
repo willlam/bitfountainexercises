@@ -36,6 +36,10 @@ class ViewController: UIViewController {
   var betMaxButton: UIButton!
   var spinButton: UIButton!
   
+  // Slots Array
+  
+  var slots: [[Slot]] = []
+  
   
   let kMarginForView: CGFloat = 10.0
   let kMarginForSlot: CGFloat = 2.0
@@ -79,6 +83,18 @@ class ViewController: UIViewController {
   func betOneButtonPressed (button: UIButton) {
     println(button)
   }
+  
+  func betMaxButtonPress (button: UIButton) {
+    
+  }
+  
+  // creates a new slot every time we hit the Spin button and override old array of slots and generating a whole new set of image views to show off the new slot instances we're recreating
+  
+  func spinButtonPressed (button: UIButton) {
+    slots = Factory.createSlots()
+    setupSecondContainer(self.secondContainer)
+  }
+  
 
   //helper function to abstract away some logic from ViewDidLoad
   
