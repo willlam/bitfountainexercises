@@ -40,6 +40,12 @@ class ViewController: UIViewController {
   
   var slots: [[Slot]] = []
   
+  // Stats
+  
+  var credits = 0
+  var currentBet = 0
+  var winnings = 0
+  
   
   let kMarginForView: CGFloat = 10.0
   let kMarginForSlot: CGFloat = 2.0
@@ -60,10 +66,10 @@ class ViewController: UIViewController {
     
     // need to let setup the container views first before working with individual containers and drawing into them.
     setupFirstContainer(self.firstContainer)
-    setupSecondContainer(self.secondContainer)
     setupThirdContainer(self.thirdContainer)
     setupFourthContainer(self.fourthContainer)
     
+    self.hardReset()
   }
 
   override func didReceiveMemoryWarning() {
@@ -77,7 +83,7 @@ class ViewController: UIViewController {
   
   
   func resetButtonPressed (button: UIButton) {
-    println("resetButtonPressed")
+    hardReset()
   }
   
   func betOneButtonPressed (button: UIButton) {
@@ -91,6 +97,7 @@ class ViewController: UIViewController {
   // creates a new slot every time we hit the Spin button and override old array of slots and generating a whole new set of image views to show off the new slot instances we're recreating
   
   func spinButtonPressed (button: UIButton) {
+    removeSlotImageViews()
     slots = Factory.createSlots()
     setupSecondContainer(self.secondContainer)
   }
@@ -227,7 +234,7 @@ class ViewController: UIViewController {
     // by adding a colon (:) in the addTarget, which is for the argument or parameter that we pass in, you're allowing to add one or more parameters
     
     self.betOneButton = UIButton()
-    self.betOneButton.setTitle("Reset", forState: UIControlState.Normal)
+    self.betOneButton.setTitle("Bet one", forState: UIControlState.Normal)
     self.betOneButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
     self.betOneButton.titleLabel?.font = UIFont(name: "Superclarendon-Bold", size: 12)
     self.betOneButton.backgroundColor = UIColor.greenColor()
@@ -256,8 +263,42 @@ class ViewController: UIViewController {
     self.spinButton.addTarget(self, action: "spinButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
     containerView.addSubview(self.spinButton)
     
-    
   }
   
+  // this function clears out old views from memory if it's drawn other cards from before (hence != or not nil.. in other words, if there's something in the view, it will clear it out.
+  
+  func removeSlotImageViews () {
+    if self.secondContainer != nil {
+      let container: UIView? = self.secondContainer
+      let subViews:Array? = container!.subviews
+      for view in subViews! {
+        view.removeFromSuperview()
+      }
+    }
 }
+  
+  func hardReset () {
+    removeSlotImageViews()
+    slots.removeAll(keepCapacity: true)
+    self.setupSecondContainer(self.secondContainer)
+    credits = 50
+    winnings = 0
+    currentBet = 0
+    updateMainView()
+  }
+  
+  func updateMainView () {
+    self.creditsLabel.text = "\(credits)"
+    self.betLabel.text = "\(currentBet)"
+    self.winnerPaidLabel.text = "\(winnings)"
+  
+  }
+  
+  func showAlertWithText (header : String = "Warning", message : String) {
+    
+    var alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+      self.presentViewController(alert, animated: true, completion: nil)
+  }
 
+}
