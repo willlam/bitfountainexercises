@@ -103,8 +103,21 @@ class ViewController: UIViewController {
     }
   }
   
-  func betMaxButtonPress (button: UIButton) {
-    
+  func betMaxButtonPressed (button: UIButton) {
+    if credits <= 5 {
+      showAlertWithText(header: "Not Enough Credits", message: "Bet Less")
+    }
+    else {
+      if currentBet < 5 {
+        var creditsToBetMax = 5 - currentBet
+        credits -= creditsToBetMax
+        currentBet += creditsToBetMax
+        updateMainView()
+      }
+      else {
+        showAlertWithText(message: "You can only bet 5 credits at a time!")
+      }
+    }
   }
   
   // creates a new slot every time we hit the Spin button and override old array of slots and generating a whole new set of image views to show off the new slot instances we're recreating
